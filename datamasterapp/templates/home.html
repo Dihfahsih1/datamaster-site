@@ -3,20 +3,19 @@
 {% load static  %}
 
 
-    <hr />
-    <!-------------------------------------------About Pamoja with sliding Images---------------------------------------------->
+    <!-------------------------------------------All Features---------------------------------------------->
     <div class="row">
         <div class="container">
+            <h2 style="text-align: center;"> Feature rich yet simple</h2><br />
             {% for feature in features %}
-            <a href="#">
                 <div class="col-lg-4" style="visibility: visible; animation-name: fade;">
                     <div class="single-news">
-                        <div class="img" style="height: 180px">
+                        <div class="img" style="height: 180px; text-align: center;">
                             {% if feature.Feature_Image %}
                             <img src="{{ feature.Feature_Image.url }}" alt="">
                             {% endif %}
                         </div>
-                        <div class="content">
+                        <div class="content" style="text-align: center;">
                             <h2 class="title">{{ feature.Feature_Title }}</h2>
                             <p class="text">
                                 {{ feature.Feature_Description|truncatewords:20|linebreaks }}
@@ -25,7 +24,6 @@
                         </div>
                     </div>
                 </div>
-            </a>
             {% endfor %}
         </div>
        
