@@ -1,58 +1,208 @@
-{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title> DataMaster </title>
+    <script
+        src="//platform-api.sharethis.com/js/sharethis.js#property=5c8e45b6da6ca80012e29a9c&product=sticky-share-buttons"></script>
+    {% load static  %}
+    {% load bootstrap4 %} {# import bootstrap4/bootstrap3 #}
+    {% bootstrap_javascript jquery='full' %} {# Embed Bootstrap JS+jQuery #}
+    {{ form.media }} {# Adds date-picker required JS and CSS #}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+    {% block meta %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="{% static 'img/uccb.jpg' %}" />
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{% static 'home/favicon-T.ico' %}">      
-    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/technaponics.css' %}"> 
+    <meta charset="ISO-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock meta %}
+
+    <title>Data Master</title>
+
+    {% block stylesheets %}
+
+    <!-- Custom Theme Style -->
+    <link href="{% static 'build/css/custom.css' %}" rel="stylesheet">
+    <!--LOAD THEMES-->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/front/classy-nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/theme/slate-gray.css' %}">
+    <link rel="stylesheet" href="{% static 'css/front/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/top_header.css' %}">
+
+    <script src="{% static 'js/front/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.js' %}"></script>
+    {% endblock stylesheets %}
+
+
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    {% endblock head %}
+
 </head>
-<body>
-<!-- Begin Navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="/home"><img src="{% static 'home/company_name.png' %}" class="logo" alt="Technaponics"></a>
-            </div>
 
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a href="/home">Features</a></li>
-                    <li><a href="#">Help</a></li>                  
-                    <li><a href="#">Blog</a></li>            
-  
-                </ul>
-            </div>
+<body style="background-color: #f8f9fa;">
 
+    <header>
+        <div class="header-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8 col-sm-12 col-12 hta-left">
+                        <div class="hta-box">
+                            <p class="text"><b>DATA MASTER</b></p>
+                        </div>
+                        <div class="hta-box">
+                            <span class="icon"><i class="fa fa-phone"></i></span>
+                            <p class="text">Call us :</p>
+                        </div>
+                        <div class="hta-box">
+                            <span class="icon"><i class="fa fa-envelope"></i></span>
+                            <p class="text">Email us :  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-<!-- End Navbar -->
-{% block content %}
-{% endblock %}
-<!-- Start Footer -->
-    <footer class="footer" >
-      <!-- Social Links -->
-      <div class="footerList">
-        <a href="#"><i class="footerIcon fa fa-facebook-official fa-4x"></i></a>
-        <a href="#"><i class="footerIcon fa fa-twitter fa-4x"></i></a>
-        <a href="#"><i class="footerIcon fa fa-youtube-play fa-4x"></i></a>           
-        <a href="#"><i class="footerIcon fa fa-instagram fa-4x"></i></a>
-      </div>
-      <!-- End Social Links -->
-      <!-- Copyright -->
-      <p class="center grey"><span id="copyright_year"></span> &copy; DataMaster Ltd. All rights reserved.</p>
-      <!-- End Copyright -->
-    </footer>
-<!-- End Footer -->
-<!-- Begin Javascript -->
-    <script>
-	    //Generate Copyright Year
-	    var yr = new Date().getFullYear();
-	    document.getElementById("copyright_year").innerHTML=yr;
-    </script>
-<!-- End Javascript -->
+        <div class="header-bottom-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <div class="logo">
+                            <a href="{% url 'index' %}">
+                                <img src="#" alt="" />
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-11">
+                        <div class="menu">
+                            <nav id="mobile_menu_active">
+                                <ul id="menu">
+                                    <li><a href="#">Features <span class="icon fa fa-chevron-down"></span></a>
+                                        <ul class="drop">
+                                            <li><a href="#">Estimates</a></li>
+                                            <li><a href="#">Billing</a></li>
+                                            <li><a href="#">Expenses</a></li>
+                                            <li><a href="#">Reporting</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Help</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock content %}
+    <!-- footer content -->`
+    <div class="row" style="margin-right: 1px;">
+        <div class="col-lg-12" style="background-color: #f3f0f0">
+            <footer class="container-fluid">
+                <div class="footer-top-area" id="program">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="footer-widget">
+                                    <h2 class="fw-title" style="text-align: center"><span> DATA Master</span></h2>
+                                    <p class="text">
+                                        <style type="text/css">
+                                            b {
+                                                font: 500px;
+                                            }
+                                        </style>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="footer-widget">
+                                    <h2 class="fw-title"><span>Quick Link:</span></h2>
+                                    <ul class="links">
+                                        <li><a href="#">Sermons</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="footer-widget">
+                                    <h2 class="fw-title">Get in Touch</h2>
+                                    <ul class="address">
+                                        <li><span class="icon"><i class="fa fa-phone"></i></span>
+                                            Phonr\e
+
+                                        </li>
+                                        
+                                    </ul><br>
+                                    <ul class="social">
+                                        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom-area">
+                    <div class="container text-center">
+
+                        <p class="copyright">
+                            {Footer 1997
+                            <script>new Date().getFullYear() > 2010 && document.write(" - " + new Date().getFullYear());</script>
+                            |
+                            Website Developed by<a href="https://mugoyadihfahsih.000webhostapp.com" target="_blank"> <b
+                                    style="font-size: 90%; color: yellow"> Mugoya Dihfahsih</b></a>
+
+                        </p>
+                    </div>
+                   
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="{% static 'vendors/jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'build/js/custom.js' %}"></script>
 </body>
+
 </html>
