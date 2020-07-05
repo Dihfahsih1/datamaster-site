@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> DataMaster </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'home/favicon-T.ico' %}">      
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/technaponics.css' %}"> 
+</head>
+<body>
+<!-- Begin Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/home"><img src="{% static 'home/company_name.png' %}" class="logo" alt="Technaponics"></a>
+            </div>
+
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="/home">Features</a></li>
+                    <li><a href="#">Help</a></li>                  
+                    <li><a href="#">Blog</a></li>            
+  
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+<!-- End Navbar -->
+{% block content %}
+{% endblock %}
+<!-- Start Footer -->
+    <footer class="footer" >
+      <!-- Social Links -->
+      <div class="footerList">
+        <a href="#"><i class="footerIcon fa fa-facebook-official fa-4x"></i></a>
+        <a href="#"><i class="footerIcon fa fa-twitter fa-4x"></i></a>
+        <a href="#"><i class="footerIcon fa fa-youtube-play fa-4x"></i></a>           
+        <a href="#"><i class="footerIcon fa fa-instagram fa-4x"></i></a>
+      </div>
+      <!-- End Social Links -->
+      <!-- Copyright -->
+      <p class="center grey"><span id="copyright_year"></span> &copy; DataMaster Ltd. All rights reserved.</p>
+      <!-- End Copyright -->
+    </footer>
+<!-- End Footer -->
+<!-- Begin Javascript -->
+    <script>
+	    //Generate Copyright Year
+	    var yr = new Date().getFullYear();
+	    document.getElementById("copyright_year").innerHTML=yr;
+    </script>
+<!-- End Javascript -->
+</body>
+</html>
