@@ -9,16 +9,10 @@ def phone_number():
     return number
 
 @register.simple_tag
-def address():
+def Emailaddress():
     detail = CompanyDetail.objects.get(id=1)
     address = detail.email_address
     return address
-
-@register.simple_tag
-def Post_Office_Box():
-    detail = CompanyDetail.objects.get(id=1)
-    church_post_number = detail.Post_Office_Box
-    return church_post_number
 
 @register.simple_tag
 def physical_address():
@@ -32,7 +26,6 @@ def name():
     full_name = detail.company_name
     return full_name
  
-
 @register.simple_tag
 def facebook():
     fb = CompanyDetail.objects.get(id=1)

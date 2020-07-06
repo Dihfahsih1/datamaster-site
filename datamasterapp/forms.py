@@ -6,7 +6,7 @@ from bootstrap_datepicker_plus import DatePickerInput, TimePickerInput, MonthPic
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        fields = ('full_name','email','comment')
+        fields = ('full_name','email','subject','comment')
         widgets = {
             'full_name': TextInput(attrs={'placeholder': 'Your Name'}),
             'email': TextInput(attrs={'placeholder': 'Your Email Address'}),

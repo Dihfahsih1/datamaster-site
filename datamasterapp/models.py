@@ -47,6 +47,7 @@ class Feedback(models.Model):
     full_name = models.CharField(max_length=100, blank=True, null=True, default='Name')
     email = models.CharField(max_length=100, blank=True, null=True, default='email@example.com')
     date=models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    subject = models.CharField(max_length=100, blank=True, null=True, default='Name')
     comment=models.TextField(blank=True, null=True)
     def __str__(self):
         return self.full_name

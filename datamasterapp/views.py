@@ -36,13 +36,12 @@ def quotation(request):
     if request.method=="POST":
         form=FeedbackForm(request.POST, request.FILES,)
         if form.is_valid():
-            company_email = Feedback.objects.get(id=1)
+            company_email = CompanyDetail.objects.get(id=1)
             emailing_to=company_email.email_address
             client_name= form.cleaned_data.get('full_name')
             mail_subject = form.cleaned_data.get('subject')   
-            message =  form.cleaned_data.get('message')  
-            received_from = form.cleaned_data.get('email')
-            attached_file = form.cleaned_data.get('files')  
+            message =  form.cleaned_data.get('comment')  
+            received_from = form.cleaned_data.get('email') 
             email = EmailMessage( to=[emailing_to],
                 subject=mail_subject, body=message,
                 from_email=[received_from ], reply_to=[received_from]
