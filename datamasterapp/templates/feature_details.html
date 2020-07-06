@@ -46,6 +46,20 @@
         <!-- <div class="img" style="height: 180px; text-align: center;">
                     <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
                 </div> -->
+
+        {% elif request.get_full_path == "/simple-online-accounting"  %}
+        <h1 style="text-align: center;  font-family:Candara, Sans-Serif; font-size:32px; ">
+            Simple online accounting software</h1>
+        <br>
+        <h5 style="text-align: center;">Just create invoices & log your expenses leave the accounting part to the app!.</h5>
+        <br />
+        <p style="text-align: center;"><a href="#" class="btn crose-btn" data-animation="fadeInUp" data-delay="700ms">Request
+                Now
+            </a>
+        </p>
+        <!-- <div class="img" style="height: 180px; text-align: center;">
+                            <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
+                        </div> -->
         {% else %}
         <div class="title">
             <p style="font-size:3vw">{{request.get_full_path}}<span> Module</span></p>
