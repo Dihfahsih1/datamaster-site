@@ -4,5 +4,5 @@ from datamasterapp import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^Feature', views.feature_details, name='feature_details'),
+    url(r'^online-estimates-and-quotations', views.estimates_quotations, name='estimates-quotations'),
 ]

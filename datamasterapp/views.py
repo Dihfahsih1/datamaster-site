@@ -5,7 +5,22 @@ def index(request):
 	reasons = Reason.objects.all()
 	context={'features':features,'reasons':reasons}
 	return render(request, 'home.html', context)
-def feature_details(request):
-	details=FeatureDetail.objects.all()
+def estimates_quotations(request):
+	details=FeatureDetail.objects.filter(Feature__Feature_Title='Estimates & Quotations')
 	context={'details':details}
-	return render(request, 'feature_detaill.html', context)
+	return render(request, 'feature_details.html', context)
+
+def invoicing_billing(request):
+	details=FeatureDetail.objects.filter(Feature__Feature_Title='Invoicing & Billing')
+	context={'details':details}
+	return render(request, 'feature_details.html', context)
+
+def expenses_purchases(request):
+	details=FeatureDetail.objects.filter(Feature__Feature_Title='Expenses & Purchases')
+	context={'details':details}
+	return render(request, 'feature_details.html', context)
+
+def accounting_reporting(request):
+	details=FeatureDetail.objects.filter(Feature__Feature_Title='Accounting & Reporting')
+	context={'details':details}
+	return render(request, 'feature_details.html', context)

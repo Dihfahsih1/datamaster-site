@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static  %}
+
+
+<!-------------------------------------------All Features---------------------------------------------->
+<div class="row" style="margin-right: 1px;">
+    <div class="container-fluid" style="height:650px; background: #e8f5f8 ;">
+        <h1 style="text-align: center;  font-family:Candara, Sans-Serif; font-size:32px; ">
+            Manage estimates and quotations online</h1>
+        <br>
+        <h5 style="text-align: center;">Create, send quotations, estimates. Convert the approved into invoices by a click!</h5><br />
+        <p style="text-align: center;"><a href="#" class="btn crose-btn" data-animation="fadeInUp"
+                data-delay="700ms">Request Now
+            </a></p>
+        <div class="img" style="height: 180px; text-align: center;">
+            <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
+        </div>
+    </div>
+</div><br>
+<div class="row" style="margin-right: 1px;">
+    <div class="container">
+        {% for feature in details %}
+        <div class="col-lg-4" style="visibility: visible; animation-name: fade;">
+            <div class="single-news">
+                <div class="img" style="height: 90px; text-align: center;">
+                    {% if feature.Feature_Sub_Image %}
+                    <img src="{{ feature.Feature_Sub_Image.url }}" alt="">
+                    {% endif %}
+                </div>
+                <div class="content" style="text-align: center;">
+                    <h2 class="title">{{ feature.Feature_Sub_Title }}</h2>
+                    <p class="text">
+                        {{ feature.Feature_Sub_Description|truncatewords:20|linebreaks }}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
