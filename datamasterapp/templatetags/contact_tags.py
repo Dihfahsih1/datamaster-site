@@ -48,4 +48,5 @@ def logo():
 def company_footer():
     foot = CompanyDetail.objects.get(id=1)
     x = foot.footer
-    return x       
+    return x 
+

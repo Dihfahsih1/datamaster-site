@@ -46,9 +46,9 @@ def feedback(request):
                 subject=mail_subject, body=message,
                 from_email=[received_from ], reply_to=[received_from]
             )  
-            email.send()
+            form.save()
             messages.success(request, f'Your Feedback has been sent successfully')
-            return redirect('request_quotation')
+            return redirect('index')
     else:
         form=FeedbackForm()
         return render(request, 'feedback_form.html',{'form':form})
