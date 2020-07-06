@@ -32,7 +32,7 @@ def accounting_reporting(request):
 	context={'details':details}
 	return render(request, 'feature_details.html', context)
 
-def quotation(request):
+def feedback(request):
     if request.method=="POST":
         form=FeedbackForm(request.POST, request.FILES,)
         if form.is_valid():
@@ -45,15 +45,11 @@ def quotation(request):
             email = EmailMessage( to=[emailing_to],
                 subject=mail_subject, body=message,
                 from_email=[received_from ], reply_to=[received_from]
-            ) 
-            if request.FILES:
-                uploaded_file=  request.FILES['files']
-                email.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
-                
+            )  
             email.send()
-            messages.success(request, f'Your quotation has been sent successfully')
+            messages.success(request, f'Your Feedback has been sent successfully')
             return redirect('request_quotation')
     else:
         form=FeedbackForm()
-        return render(request, 'home/quotation/quotation_form.html',{'form':form})
-    return render(request, 'home/quotation/quotation_form.html')   
+        return render(request, 'feedback_form.html',{'form':form})
+    return render(request, 'feedback_form.html')   

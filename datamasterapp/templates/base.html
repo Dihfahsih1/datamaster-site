@@ -6,7 +6,7 @@
 <head>
     <script
         src="//platform-api.sharethis.com/js/sharethis.js#property=5c8e45b6da6ca80012e29a9c&product=sticky-share-buttons"></script>
-    {% load static  %}
+    {% load static contact_tags %}
     {% load bootstrap4 %} {# import bootstrap4/bootstrap3 #}
     {% bootstrap_javascript jquery='full' %} {# Embed Bootstrap JS+jQuery #}
     {{ form.media }} {# Adds date-picker required JS and CSS #}
@@ -64,19 +64,15 @@
                     <div class="row">
                         <div class="col-lg-9 col-md-8 col-sm-12 col-12">
                             <div class="hta-box">
-                                <p class="text"><b>DATAMASTER</b></p>
+                                <p class="text"><b>{% name %}</b></p>
                             </div>
                             <div class="hta-box">
                                 <span class="icon"><i class="fa fa-phone"></i></span>
-                                <p class="text">Call us :</p>
+                                <p class="text">Call us : {% phone_number %}</p>
                             </div>
                             <div class="hta-box">
                                 <span class="icon"><i class="fa fa-envelope"></i></span>
-                                <p class="text">Email us :</p>
-                            </div>
-                            <div class="hta-box">
-                                <span class="icon"><i class="fa fa-pencil"></i></span>
-                                <p class="text">P.O.Box :</p>
+                                <p class="text">Email us : {% Emailaddress %}</p>
                             </div>
                         </div>
                     </div>
@@ -88,7 +84,7 @@
                         <div class="col-lg-3">
                             <div class="logo">
                                 <a href="{% url 'index' %}">
-                                    <img src="#" alt="" />
+                                    <img src="{% logo %}" alt="" />
                                 </a>
 
                             </div>
@@ -133,7 +129,7 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="footer-widget">
-                        <h2 class="fw-title" style="text-align: center"><span> DATA Master</span></h2>
+                        <h2 class="fw-title" style="text-align: center"><span> {% name %}</span></h2>
                         <p class="text">
                             <style type="text/css">
                                 b {
@@ -146,7 +142,10 @@
                     <div class="footer-widget">
                         <h2 class="fw-title"><span>Quick Link:</span></h2>
                         <ul class="links">
-                            <li><a href="#">Features</a></li>
+                            <li><a href="{% url 'estimates-quotations' %}"><span style="font-size: 15px;">Estimates & Quotations</span></a></li>
+                            <li><a href="{% url 'accounting-reporting' %}"><span style="font-size: 15px;">Accounting & Reporting</span></a></li>
+                            <li><a href="{% url 'expenses-management' %}"><span style="font-size: 15px;">Expenses & Purchases</span></a></li>
+                            <li><a href="{% url 'invoicing-billing' %}"><span style="font-size: 15px;">Invoicing & Billing</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -156,14 +155,20 @@
                         <h2 class="fw-title">Get in Touch</h2>
                         <ul class="address">
                             <li><span class="icon"><i class="fa fa-phone"></i></span>
-                                Phonr\e
-
+                                {% phone_number %}
+                        
+                            </li>
+                            <li><span class="icon"><i class="fa fa-envelope"></i></span>
+                                {% Emailaddress %}
+                            </li>
+                            <li><span class="icon"><i class="fa fa-map-marker"></i></span>
+                                {% physical_address %}
                             </li>
                         </ul><br>
                         <ul class="social">
-                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <li><a href="{%facebook%}" target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
-                            <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <li><a href="{%youtube%}" target="_blank"><i class="fa fa-youtube"></i></a>
                             </li>
 
                         </ul>
@@ -175,7 +180,7 @@
     </div>
     <div class="col-lg-12 footer-bottom-area">
         <p class="copyright" style="text-align: center;">
-            DataMaster@
+            {% company_footer %}
             <script>new Date().getFullYear() > 2010 && document.write(+ new Date().getFullYear());</script>
             Powered by<a href="https://www.pamojagroupltd.com" target="_blank"> <b style="font-size: 90%; color: yellow"> Pamoja(G) Ltd</b></a>
         </p>

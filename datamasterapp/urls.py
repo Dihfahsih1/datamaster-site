@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^online-invoicing-and-billing', views.invoicing_billing, name='invoicing-billing'),
     url(r'^expenses-management', views.expenses_purchases, name='expenses-management'),
     url(r'^simple-online-accounting', views.accounting_reporting, name='accounting-reporting'),
+    url(r'^feedback', views.feedback, name='feedback'),
     
 ]
