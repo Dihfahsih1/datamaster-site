@@ -29,3 +29,11 @@ class FeatureDetail(models.Model):
     Feature_Sub_Image = models.ImageField(upload_to='features/',max_length= 10000,blank=True, null=True)
     def __str__(self):
         return self.Feature_Sub_Title + str('('+ self.Feature.Feature_Title + ')')
+
+class Feedback(models.Model):
+    full_name = models.CharField(max_length=100, blank=True, null=True, default='Name')
+    email = models.CharField(max_length=100, blank=True, null=True, default='email@example.com')
+    date=models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    comment=models.TextField(blank=True, null=True)
+    def __str__(self):
+        return self.full_name

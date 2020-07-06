@@ -10,7 +10,8 @@ def estimates_quotations(request):
 	for i in details:
 		sub_title=(i.Feature.Feature_Sub_Title)
 		description=(i.Feature.Feature_Description)
-	context={'details':details,'sub':sub_title,'description':description}
+		demo=(i.Feature.Feature_Image)
+	context={'details':details,'sub':sub_title,'description':description,'demo':demo}
 	return render(request, 'feature_details.html', context)
 
 def invoicing_billing(request):

@@ -15,7 +15,9 @@
                 data-delay="700ms">Request Now
             </a></p>
         <div class="img" style="height: 180px; text-align: center;">
-            <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
+        {% if demo %}
+        <img src="{{ demo.url}}" alt="">
+        {% endif %}
         </div>
 
 
