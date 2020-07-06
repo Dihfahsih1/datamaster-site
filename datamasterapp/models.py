@@ -1,5 +1,18 @@
 from django.db import models
-
+class CompanyDetail(models.Model):
+    company_name = models.CharField(max_length=130, blank=True, null=True)
+    company_logo = models.ImageField(upload_to='logo/',blank=True, null=True)
+    address = models.CharField(max_length=130, blank=True, null=True)
+    phone = models.CharField(max_length=130, blank=True, null=True)
+    email_address = models.EmailField(max_length=120)
+    facebook_url = models.URLField(max_length=130, blank=True, null=True)
+    youtube_url = models.URLField(max_length=130, blank=True, null=True)
+    footer = models.CharField(max_length=130, blank=True, null=True)
+    class Meta:
+        default_permissions = ('view', 'add', 'change', 'delete')
+       
+    def __str__(self):
+        return self.company_name
 class MainFeature(models.Model):
     Feature_Title = models.CharField(max_length=500, blank=True, null=True)
     Feature_Sub_Title = models.CharField(max_length=50000,blank=True, null=True)
