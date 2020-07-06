@@ -4,7 +4,21 @@
 
 
     <!-------------------------------------------All Features---------------------------------------------->
-    <div class="row">
+    <div class="row" style="margin-right: 1px;">
+        <div class="container-fluid" style="height:450px; background: #e8f5f8 ;">
+            <h1 style="text-align: center;  font-family:Candara, Sans-Serif; font-size:32px; ">
+                Simplest Accounting Software on Earth</h1>
+            <br>
+            <h5 style="text-align: center;">Sets you stress-free to lead your business!</h5><br />
+            <p style="text-align: center;"><a href="#" class="btn crose-btn" data-animation="fadeInUp"
+                    data-delay="700ms">Request Now
+                </a></p>
+            <div class="img" style="height: 180px; text-align: center;">
+                <img class="round-circle" src="{% static 'img/home.JPG' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-right: 1px;">
         <div class="container">
             <h2 style="text-align: center;"> Feature rich yet simple</h2><br />
             {% for feature in features %}
@@ -26,20 +40,32 @@
                 </div>
             {% endfor %}
         </div>
-       
     </div>
-    <hr />
-    <!-----------------------------------------Social Media Section------------------------------------------------->
-    <div class="row">
-       
-    </div>
-    <hr />
-    <!-----------------------------------------Website Feedback------------------------------------------------->
-    <div class="row">
-        
-    </div>
+    <!-----------------------------------------SWhy DataMaster------------------------------------------------->
 
-    <hr />
+    <div class="row" style="margin-right: 1px; background: #e8f5f8 ;">
+        <div class="container">
+            <h2 style="text-align: center;"> Why Choose DataMaster</h2><br />
+            {% for reason in reasons %}
+            <div class="col-lg-4" style="visibility: visible; animation-name: fade;">
+                
+                    <div class="col-lg-3 img" style="height: 180px;">
+                        {% if reason.Reason_Image %}
+                        <img src="{{ reason.Reason_Image.url }}" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-9 content">
+                        <h2 class="title">{{ reason.Reason_Title }}</h2>
+                        <p class="text">
+                            {{ reason.Reason_Description|truncatewords:20|linebreaks }}
+                        </p>
+    
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-----------------------------------------Website Feedback------------------------------------------------->
 
     <!------------------------------------------------Website Footer----------------------------------------------->
 
