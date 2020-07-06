@@ -7,7 +7,10 @@ def index(request):
 	return render(request, 'home.html', context)
 def estimates_quotations(request):
 	details=FeatureDetail.objects.filter(Feature__Feature_Title='Estimates & Quotations')
-	context={'details':details}
+	for i in details:
+		sub_title=(i.Feature.Feature_Sub_Title)
+		description=(i.Feature.Feature_Description)
+	context={'details':details,'sub':sub_title,'description':description}
 	return render(request, 'feature_details.html', context)
 
 def invoicing_billing(request):
