@@ -24,7 +24,7 @@
             {% for feature in features %}
                 <div class="col-lg-4" style="visibility: visible; animation-name: fade;">
                     <div class="single-news">
-                        <div class="img" style="height: 180px; text-align: center;">
+                        <div class="img" style="height: 130px; text-align: center;">
                             {% if feature.Feature_Image %}
                             <img src="{{ feature.Feature_Image.url }}" alt="">
                             {% endif %}
@@ -32,7 +32,7 @@
                         <div class="content" style="text-align: center;">
                             <h2 class="title">{{ feature.Feature_Title }}</h2>
                             <p class="text">
-                                {{ feature.Feature_Description|truncatewords:20|linebreaks }}
+                                {{ feature.Feature_Description|truncatewords:15|linebreaks }}
                             </p>
         
                         </div>

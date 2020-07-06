@@ -6,6 +6,7 @@
 <!-------------------------------------------All Features---------------------------------------------->
 <div class="row" style="margin-right: 1px;">
     <div class="container-fluid" style="height:650px; background: #e8f5f8 ;">
+        {% if request.get_full_path == "/online-estimates-and-quotations"  %}
         <h1 style="text-align: center;  font-family:Candara, Sans-Serif; font-size:32px; ">
             Manage estimates and quotations online</h1>
         <br>
@@ -16,6 +17,12 @@
         <div class="img" style="height: 180px; text-align: center;">
             <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
         </div>
+        {% else %}
+        <div class="title">
+            <p style="font-size:3vw">{{request.get_full_path}}<span> Module</span></p>
+        </div>
+        {% endif %}
+        
     </div>
 </div><br>
 <div class="row" style="margin-right: 1px;">
