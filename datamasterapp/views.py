@@ -46,7 +46,7 @@ def feedback(request):
                 subject=mail_subject, body=message,
                 from_email=[received_from ], reply_to=[received_from]
             )  
-            form.save()
+            email.send()
             messages.success(request, f'Your Feedback has been sent successfully')
             return redirect('index')
     else:

@@ -142,13 +142,11 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <h4 class="text-danger"><b>Feedback Form</b></h4>
-    
+                <div class="modal-body">    
                     <section class="page-contact-area">
                         {% load crispy_forms_tags %}
                         <div class="contact-form-area">
-                            <h2 style="text-align: center;" class="contact-page-title">The Feedback Form</h2>
+                            <h2 style="text-align: center;" class="text-danger contact-page-title">The Feedback Form</h2>
                             <form action="{% url 'feedback' %}" method="POST" >
                                 {% csrf_token %}
                                 <div class="row">
@@ -160,7 +158,7 @@
                             
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="contact-input-box">
-                                            <input type="email" name="Email" id="email" required="required" placeholder="Email *">
+                                            <input type="email" name="email" id="email" required="required" placeholder="Email *">
                                         </div>
                                     </div>
                             
