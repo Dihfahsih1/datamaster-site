@@ -17,6 +17,35 @@
         <div class="img" style="height: 180px; text-align: center;">
             <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
         </div>
+
+
+        {% elif request.get_full_path == "/online-invoicing-and-billing"  %}
+        <h1 style="text-align: center;  font-family:Candara, Sans-Serif; font-size:32px; ">
+            Simple online invoicing software</h1>
+        <br>
+        <h5 style="text-align: center;">Manage clients, create invoices, log payment against invoices, track unpaid invoices and much more.</h5>
+        <br />
+        <p style="text-align: center;"><a href="#" class="btn crose-btn" data-animation="fadeInUp" data-delay="700ms">Request
+                Now
+            </a>
+        </p>
+        <!-- <div class="img" style="height: 180px; text-align: center;">
+            <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
+        </div> -->
+
+        {% elif request.get_full_path == "/expenses-management"  %}
+        <h1 style="text-align: center;  font-family:Candara, Sans-Serif; font-size:32px; ">
+            Online expenses management software</h1>
+        <br>
+        <h5 style="text-align: center;">Manage vendors, create custom expense categories, log and track expenses.</h5>
+        <br />
+        <p style="text-align: center;"><a href="#" class="btn crose-btn" data-animation="fadeInUp" data-delay="700ms">Request
+                Now
+            </a>
+        </p>
+        <!-- <div class="img" style="height: 180px; text-align: center;">
+                    <img class="round-circle" src="{% static 'img/estimates_demo.JPG' %}" alt="">
+                </div> -->
         {% else %}
         <div class="title">
             <p style="font-size:3vw">{{request.get_full_path}}<span> Module</span></p>
@@ -28,7 +57,7 @@
 <div class="row" style="margin-right: 1px;">
     <div class="container">
         {% for feature in details %}
-        <div class="col-lg-4" style="visibility: visible; animation-name: fade;">
+        <div class="col-lg-4" style="visibility: visible; animation-name: fade;height: 250px;">
             <div class="single-news">
                 <div class="img" style="height: 90px; text-align: center;">
                     {% if feature.Feature_Sub_Image %}
@@ -46,6 +75,6 @@
         </div>
         {% endfor %}
     </div>
-</div>
+</div><br>
 
 {% endblock %}

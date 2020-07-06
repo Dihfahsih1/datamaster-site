@@ -23,4 +23,4 @@ class FeatureDetail(models.Model):
     Feature_Sub_Description = models.TextField(blank=True, null=True)
     Feature_Sub_Image = models.ImageField(upload_to='features/',max_length= 10000,blank=True, null=True)
     def __str__(self):
-        return self.Feature_Sub_Title
+        return self.Feature_Sub_Title + str('('+ self.Feature.Feature_Title + ')')

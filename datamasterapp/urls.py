@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^online-estimates-and-quotations', views.estimates_quotations, name='estimates-quotations'),
     url(r'^online-invoicing-and-billing', views.invoicing_billing, name='invoicing-billing'),
+    url(r'^expenses-management', views.expenses_purchases, name='expenses-management'),
     
 ]
