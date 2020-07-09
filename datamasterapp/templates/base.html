@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +41,7 @@
     <link rel="stylesheet" href="{% static 'css/front/meanmenu.css' %}">
     <link rel="stylesheet" href="{% static 'css/front/jquery.fancybox.min.css' %}">
     <!-- <link rel="stylesheet" href="{% static 'css/front/theme/slate-gray.css' %}"> -->
-    <link rel="stylesheet" href="{% static 'css/front/theme/light-sea-green.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/front/theme/light-sea-green.css' %}">
     <link rel="stylesheet" href="{% static 'css/front/responsive.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/top_header.css' %}">
@@ -93,16 +91,24 @@
                             <div class="menu">
                                 <nav id="mobile_menu_active">
                                     <ul id="menu">
-                                        <li><a href="#"><b style="color:black">Features</b><span style="color: black;" class="icon fa fa-chevron-down"></span></a>
+                                        <li><a href="#"><b style="color:black">Features</b><span style="color: black;"
+                                                    class="icon fa fa-chevron-down"></span></a>
                                             <ul class="drop">
-                                                <li><a href="{% url 'estimates-quotations' %}"><span style="font-size: 15px;">Estimates & Quotations</span></a></li>
-                                                <li><a href="{% url 'accounting-reporting' %}"><span style="font-size: 15px;">Accounting & Reporting</span></a></li>
-                                                <li><a href="{% url 'expenses-management' %}"><span style="font-size: 15px;">Expenses & Purchases</span></a></li>
-                                                <li><a href="{% url 'invoicing-billing' %}"><span style="font-size: 15px;">Invoicing & Billing</span></a></li>
+                                                <li><a href="{% url 'estimates-quotations' %}"><span
+                                                            style="font-size: 15px;">Estimates & Quotations</span></a>
+                                                </li>
+                                                <li><a href="{% url 'accounting-reporting' %}"><span
+                                                            style="font-size: 15px;">Accounting & Reporting</span></a>
+                                                </li>
+                                                <li><a href="{% url 'expenses-management' %}"><span
+                                                            style="font-size: 15px;">Expenses & Purchases</span></a>
+                                                </li>
+                                                <li><a href="{% url 'invoicing-billing' %}"><span
+                                                            style="font-size: 15px;">Invoicing & Billing</span></a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#"><b style="color:black">Get Help</b></a></li>
-                                        
+
                                     </ul>
                                 </nav>
                             </div>
@@ -113,7 +119,8 @@
                                 <button type="button" class="close" data-dismiss="alert">x</button>
                                 <ul>
                                     {% for message in messages %}
-                                    <h1 style="font-weight: bolder" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                                    <h1 style="font-weight: bolder" {% if message.tags %} class="{{ message.tags }}"
+                                        {% endif %}>{{ message }}
                                     </h1>
                                     {% endfor %}
                                 </ul>
@@ -126,142 +133,156 @@
         </div>
     </header>
     {% block content %}
-   
+
+
+
+
+
+
+
     {% endblock content %}
-    <button class="btn btn-default" data-toggle="modal" data-target="#date" style="padding: 30px; margin-left:20px">Send
-        Message</button>
-    
-    <!-- date Modal -->
-    <div class="modal fade" id="date" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Data Master</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">    
-                    <section class="page-contact-area">
-                        {% load crispy_forms_tags %}
-                        <div class="contact-form-area">
-                            <h2 style="text-align: center;" class="text-danger contact-page-title">The Feedback Form</h2>
-                            <form action="{% url 'feedback' %}" method="POST" >
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="contact-input-box">
-                                            <input type="text" name="full_name" id="name" required="required" placeholder="Name *">
-                                        </div>
-                                    </div>
-                            
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="contact-input-box">
-                                            <input type="email" name="email" id="email" required="required" placeholder="Email *">
-                                        </div>
-                                    </div>
-                            
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="contact-input-box">
-                                            <input type="text" name="subject" id="subject" placeholder="Subject">
-                                        </div>
-                                    </div>
-                            
-                                    <div class="col-12">
-                                        <div class="contact-input-box">
-                                            <textarea name="comment" id="message" required="required" placeholder="Message "></textarea>
-                                        </div>
-                                    </div>
-                            
-                                    <div class="col-12">
-                                        <div class="contact-input-box text-right">
-                                            <input class="glbscl-link-btn hvr-bs" type="submit" name="submit" id="submit" value="Submit">
-                                        </div>
-                                    </div>
-                            
-                                </div>
-                            
-                            </form>
+    <div class="row" style="margin-right: 1px; background: #e8f5f8 ;">
+        <div class="col-lg-12 footer-bottom-area">
+            <p class="copyright" style="text-align: center;">
+                <span style="font-size:2vw"> Still thinking? What are you waiting for!</span>
+                <button class="btn crose-btn" data-toggle="modal" data-animation="fadeInUp" data-delay="700ms"
+                    data-target="#date" style=" margin-left:20px">Start For Free
+                </button>
+            </p>
+            <!-- date Modal -->
+            <div class="modal fade" id="date" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Data Master</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    </section>
+                        <div class="modal-body">
+                            <section class="page-contact-area">
+                                {% load crispy_forms_tags %}
+                                <div class="contact-form-area">
+                                    <h2 style="text-align: center;" class="text-danger contact-page-title">Request Form
+                                    </h2>
+                                    <form action="{% url 'feedback' %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="contact-input-box">
+                                                    <input type="text" name="full_name" id="name" required="required"
+                                                        placeholder="Name *">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="contact-input-box">
+                                                    <input type="email" name="email" id="email" required="required"
+                                                        placeholder="Email *">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="contact-input-box">
+                                                    <input type="text" name="subject" id="subject"
+                                                        placeholder="Subject">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="contact-input-box">
+                                                    <textarea name="comment" id="message" required="required"
+                                                        placeholder="Message "></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="contact-input-box text-right">
+                                                    <input class="glbscl-link-btn hvr-bs" type="submit" name="submit"
+                                                        id="submit" value="Submit">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-
-
-   <div class="row" style="margin-right: 1px; background: #e8f5f8 ;">
-    <div class="col-lg-12 footer-bottom-area">
-        <p class="copyright" style="text-align: center;">
-            <span style="font-size:2vw"> Still thinking? What are you waiting for!</span>
-            <a href="#" class="btn crose-btn" data-animation="fadeInUp" data-delay="700ms">Start For Free
-            </a>
-        </p>
-    </div>
-    <div class="col-lg-12 footer-top-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="footer-widget">
-                        <h2 class="fw-title" style="text-align: center"><span> {% name %}</span></h2>
-                        <p class="text">
-                            <style type="text/css">
-                                b {
-                                    font: 500px;
-                                }
-                            </style>
+        <div class="col-lg-12 footer-top-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="footer-widget">
+                            <h2 class="fw-title" style="text-align: center"><span> {% name %}</span></h2>
+                            <p class="text">
+                                <style type="text/css">
+                                    b {
+                                        font: 500px;
+                                    }
+                                </style>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h2 class="fw-title"><span>Quick Link:</span></h2>
-                        <ul class="links">
-                            <li><a href="{% url 'estimates-quotations' %}"><span style="font-size: 15px;">Estimates & Quotations</span></a></li>
-                            <li><a href="{% url 'accounting-reporting' %}"><span style="font-size: 15px;">Accounting & Reporting</span></a></li>
-                            <li><a href="{% url 'expenses-management' %}"><span style="font-size: 15px;">Expenses & Purchases</span></a></li>
-                            <li><a href="{% url 'invoicing-billing' %}"><span style="font-size: 15px;">Invoicing & Billing</span></a></li>
-                        </ul>
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <h2 class="fw-title"><span>Quick Link:</span></h2>
+                            <ul class="links">
+                                <li><a href="{% url 'estimates-quotations' %}"><span style="font-size: 15px;">Estimates
+                                            & Quotations</span></a></li>
+                                <li><a href="{% url 'accounting-reporting' %}"><span style="font-size: 15px;">Accounting
+                                            & Reporting</span></a></li>
+                                <li><a href="{% url 'expenses-management' %}"><span style="font-size: 15px;">Expenses &
+                                            Purchases</span></a></li>
+                                <li><a href="{% url 'invoicing-billing' %}"><span style="font-size: 15px;">Invoicing &
+                                            Billing</span></a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="footer-widget">
-                        <h2 class="fw-title">Get in Touch</h2>
-                        <ul class="address">
-                            <li><span class="icon"><i class="fa fa-phone"></i></span>
-                                {% phone_number %}
-                        
-                            </li>
-                            <li><span class="icon"><i class="fa fa-envelope"></i></span>
-                                {% Emailaddress %}
-                            </li>
-                            <li><span class="icon"><i class="fa fa-map-marker"></i></span>
-                                {% physical_address %}
-                            </li>
-                        </ul><br>
-                        <ul class="social">
-                            <li><a href="{%facebook%}" target="_blank"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="{%youtube%}" target="_blank"><i class="fa fa-youtube"></i></a>
-                            </li>
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h2 class="fw-title">Get in Touch</h2>
+                            <ul class="address">
+                                <li><span class="icon"><i class="fa fa-phone"></i></span>
+                                    {% phone_number %}
 
-                        </ul>
+                                </li>
+                                <li><span class="icon"><i class="fa fa-envelope"></i></span>
+                                    {% Emailaddress %}
+                                </li>
+                                <li><span class="icon"><i class="fa fa-map-marker"></i></span>
+                                    {% physical_address %}
+                                </li>
+                            </ul><br>
+                            <ul class="social">
+                                <li><a href="{%facebook%}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li><a href="{%youtube%}" target="_blank"><i class="fa fa-youtube"></i></a>
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
+        <div class="col-lg-12 footer-bottom-area">
+            <p class="copyright" style="text-align: center;">
+                {% company_footer %}
+                <script>new Date().getFullYear() > 2010 && document.write(+ new Date().getFullYear());</script>
+                Powered by<a href="https://www.pamojagroupltd.com" target="_blank"> <b
+                        style="font-size: 90%; color: yellow"> Pamoja(G) Ltd</b></a>
+            </p>
+        </div>
     </div>
-    <div class="col-lg-12 footer-bottom-area">
-        <p class="copyright" style="text-align: center;">
-            {% company_footer %}
-            <script>new Date().getFullYear() > 2010 && document.write(+ new Date().getFullYear());</script>
-            Powered by<a href="https://www.pamojagroupltd.com" target="_blank"> <b style="font-size: 90%; color: yellow"> Pamoja(G) Ltd</b></a>
-        </p>
-    </div>
-    </div>
-    
+
     <!-- Scripts -->
     <script src="{% static 'vendors/jquery-ui/jquery-ui.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
