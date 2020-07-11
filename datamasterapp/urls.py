@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.urls import path
 from datamasterapp import views
 
@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^expenses-management', views.expenses_purchases, name='expenses-management'),
     url(r'^simple-online-accounting', views.accounting_reporting, name='accounting-reporting'),
     url(r'^feedback', views.feedback, name='feedback'),
+    url(r'^hero-slider/', include('hero_slider.urls')),
     
 ]
