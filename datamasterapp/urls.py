@@ -9,6 +9,5 @@ urlpatterns = [
     url(r'^expenses-management', views.expenses_purchases, name='expenses-management'),
     url(r'^simple-online-accounting', views.accounting_reporting, name='accounting-reporting'),
     url(r'^feedback', views.feedback, name='feedback'),
-    url(r'^hero-slider/', include('hero_slider.urls')),
     
 ]
