@@ -11,14 +11,12 @@
             {{sub}}</h1>
         <br>
         <h5 style="text-align: center;">{{description}}</h5><br />
-        <p style="text-align: center;"><a href="#" class="btn crose-btn" data-animation="fadeInUp"
+        <p style="text-align: center;">
+            <a href="#" class="btn crose-btn" data-animation="fadeInUp"
                 data-delay="700ms">Request Now
-            </a></p>
-        <div class="img" style="height: 180px; text-align: center;">
-        {% if demo %}
-        <img src="{{ demo.url}}" alt="">
-        {% endif %}
-        </div>
+            </a>
+        </p>
+      
 
 
         {% elif request.get_full_path == "/online-invoicing-and-billing"  %}
