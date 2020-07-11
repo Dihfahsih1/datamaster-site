@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from.models import *
 from.forms import *
 from django.core.mail import EmailMessage
+
 def index(request):
 	features = Feature.objects.all()
 	reasons = Reason.objects.all()
